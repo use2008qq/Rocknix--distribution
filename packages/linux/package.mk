@@ -46,10 +46,13 @@ else
   PKG_DEPENDS_TARGET+=" toolchain"
 fi
 
-if [ "${PKG_BUILD_PERF}" != "no" ] && grep -q ^CONFIG_PERF_EVENTS= ${PKG_KERNEL_CFG_FILE}; then
-  PKG_BUILD_PERF="yes"
-  PKG_DEPENDS_TARGET+=" binutils elfutils libunwind zlib openssl"
-fi
+# Disable perf build for RK3288 to avoid compilation issues
+PKG_BUILD_PERF="no"
+# Original perf build logic (disabled):
+# if [ "${PKG_BUILD_PERF}" != "no" ] && grep -q ^CONFIG_PERF_EVENTS= ${PKG_KERNEL_CFG_FILE}; then
+#   PKG_BUILD_PERF="yes"
+#   PKG_DEPENDS_TARGET+=" binutils elfutils libunwind zlib openssl"
+# fi
 
 if [ "${TARGET_ARCH}" = "x86_64" ]; then
   PKG_DEPENDS_TARGET+=" elfutils:host pciutils"
