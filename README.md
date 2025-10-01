@@ -5,7 +5,9 @@
 ROCKNIX is an immutable Linux distribution for handheld gaming devices developed by a small community of enthusiasts.  Our goal is to produce an operating system that has the features and capabilities that we need, and to have fun as we develop it.
 
 ## Features
+* 编译方法--基于UBUNTU22.04:
 
+* 
 * ROCKNIX has a very active community of developers and users.
 * Integrated cross-device local and remote network play.
 * In-game touch support on supported devices.
